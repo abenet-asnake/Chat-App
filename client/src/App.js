@@ -1,17 +1,20 @@
 
 import './App.css';
-import { ChakraProvider } from '@chakra-ui/react';
-import { Button} from '@chakra-ui/react'
-
+// import { ChakraProvider } from '@chakra-ui/react';
+// import { Button} from '@chakra-ui/react';
+import {Route} from 'react-router-dom';
+import Home from './pages/Home';
+import Chat from './pages/Chat';
 function App() {
   return (
-    <ChakraProvider>
+    
        <div className="App">
-       <Button colorScheme='blue'>Button</Button>
-      Hello There 
+       <Route path="/" component={Home} />
+       <Route path="/chats/" component={Chat} />
+    
     </div>
   
-    </ChakraProvider>
+
   );
 }
 
