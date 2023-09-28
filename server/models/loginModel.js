@@ -2,17 +2,19 @@ const mongoose = require('mongoose');
 
 const loginModel =  mongoose.Schema({
 
-user_Name:{
-    type: 'string',
-    required: [true,'Please enter your user name '],
+email:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'SignUp',
 
 },
 
 password:{
-    type: 'string',
-    required: [true,'Please enter your password'],
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'SignUp',
 }
-
-
-});
+},
+{ 
+    timestamps: true ,
+},
+);
 module.exports = mongoose.model("Login",loginModel);
