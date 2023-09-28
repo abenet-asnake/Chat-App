@@ -2,6 +2,7 @@ const asyncHandler = require('express-async-handler');
 // importing the model module
 const loginModel = require('../models/loginModel');
 const chatModel = require('../models/chatModel');
+const chats = require('../Data_Test/chatTest');
 
 //@disc Chat 
 //@routes POST /api/chat/
@@ -22,4 +23,14 @@ const chat= asyncHandler (async (req,res) => {
 
 });
 
-module.exports = chat;
+//@disc Chat 
+//@routes GET /api/chat/:id
+//@access public
+const getChat= asyncHandler (async (req,res) => {
+    // const singleChat=chats.find((chat) => chat._id === req.params.id);
+    // res.send(singleChat);
+    res.send(chats);
+
+ });
+   
+module.exports = {chat,getChat};
