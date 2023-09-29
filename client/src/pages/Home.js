@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container, Box, Text,Tabs,TabList,Tab,TabPanels,TabPanel } from '@chakra-ui/react';
+import { Container, Box, Text,Tabs,
+         TabList,Tab,TabPanels,TabPanel } from '@chakra-ui/react';
 const Home = () => {
   return (
     <Container maxW='xl' centerContent>
