@@ -1,6 +1,7 @@
 import React , {useState} from 'react'
 import { Button, FormControl, FormLabel, Input, 
-  InputGroup, InputRightElement, VStack} from '@chakra-ui/react';
+  InputGroup, InputRightElement,InputLeftElement, VStack} from '@chakra-ui/react';
+  import { PhoneIcon, AddIcon, UnlockIcon,EmailIcon } from '@chakra-ui/icons';
 const SignUp = () => {
   // creating state
 const [show, setShow]=useState(false);
@@ -57,17 +58,30 @@ const submitHandler=() => {
 <FormControl id='email' isRequired>
         <FormLabel>Email Address</FormLabel>
       </FormControl>
-      <Input
-      placeholder='Enter Your  Email Address'
+      <InputGroup>
+    <InputLeftElement pointerEvents='none'>
+      <EmailIcon color='gray.300' />
+    </InputLeftElement>
+    <Input
+      type='email'
+      placeholder=' Email Address'
       onChange={(error)=>setEmail(error.target.value)}/>
 
+    </InputGroup>
       <FormControl id='phone-number' isRequired>
         <FormLabel>Phone Number</FormLabel>
       </FormControl>
-      <Input
-      placeholder='Enter Your Phone Number'
+      <InputGroup>
+    <InputLeftElement pointerEvents='none'>
+      <PhoneIcon color='gray.300' />
+    </InputLeftElement>
+    <Input
+      type='tel'
+      placeholder=' Phone Number'
       onChange={(error)=>setPhone(error.target.value)}/>
 
+    </InputGroup>
+      
       <FormControl id='password' isRequired>
         <FormLabel>Password</FormLabel>
       </FormControl>
@@ -76,6 +90,9 @@ const submitHandler=() => {
              type={show ? 'text':'password' }
              placeholder='Enter Your Password'
              onChange={(error)=>setPassword(error.target.value)}/>
+        <InputLeftElement pointerEvents='none'>
+      <UnlockIcon color='gray.300' />
+    </InputLeftElement>
         <InputRightElement width='4.5rem'>
           <Button h='1.5rem' size='sm' onClick={handleClick}>
             {show ? "Hide" : "Show"}
@@ -91,7 +108,7 @@ const submitHandler=() => {
          <InputGroup>
          <Input
              type={show ? 'text':'password' }
-             placeholder='Enter Your Password'
+             placeholder='Re type your Password'
              onChange={(error)=>setPassword(error.target.value)}/>
         <InputRightElement width='4.5rem'>
           <Button h='1.5rem' size='sm' onClick={handleClick}>
@@ -106,7 +123,7 @@ const submitHandler=() => {
           type="file"
           p={1.5}
           accept="image/*"
-          onChange={(e) => postDetails(e.target.files[0])}
+          onChange={(error) => postDetails(error.target.files[0])}
         />
         </FormControl>     
         <Button
