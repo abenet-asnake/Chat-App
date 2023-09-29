@@ -8,7 +8,7 @@ const SignUp = () => {
   const [email,setEmail] = useState();
   const [phone,setPhone] = useState();
   const [password,setPassword] = useState();
-  const [confirmPassword,setconfirmPassword] = useState();
+  const [confirmPassword,setConfirmPassword] = useState();
   const [picture,setPicture] = useState();
 
   return (
