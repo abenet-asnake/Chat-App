@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
 const signUpModel =  mongoose.Schema({
-first_Name:{
+firstName:{
     type: String,
     required: [true,'Please enter your First Name ']
 
 },
-last_Name:{
+lastName:{
     type: String,
     required: [true,'Please enter your last Name ']
 },
-user_Name:{
+userName:{
     type: String,
     required: [true,'Please enter your User Name '],
 
@@ -27,10 +27,7 @@ password:{
     type: String,
     required: [true,'Please enter your password'],
 },
-confirm_password:{
-    type: String,
-    required: [true,'Please enter your confirm password'] 
-},
+
 picture:{
     type: String,
     required: [true,'Please insert your picture'] ,
