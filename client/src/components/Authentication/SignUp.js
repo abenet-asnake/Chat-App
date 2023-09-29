@@ -16,6 +16,20 @@ const [show, setShow]=useState(false);
   // handling the show and hide buttons
   const handleClick=() => setShow(!show);
 
+  // image controlling the post 
+  const postDetails = (pics) => {
+    
+    };
+
+// Image Loading State
+// const picLoading=() => {
+
+// };
+// summit handler for Sign Up button
+const submitHandler=() => {
+
+};
+
 
   return (
    <VStack spacing='6px'>
@@ -86,7 +100,24 @@ const [show, setShow]=useState(false);
         </InputRightElement>
 
          </InputGroup>
-
+         <FormControl id="pic">
+        <FormLabel>Upload your Picture</FormLabel>
+        <Input
+          type="file"
+          p={1.5}
+          accept="image/*"
+          onChange={(e) => postDetails(e.target.files[0])}
+        />
+        </FormControl>     
+        <Button
+        colorScheme="blue"
+        width="100%"
+        style={{ marginTop: 15 }}
+        onClick={submitHandler}
+       // isLoading={picLoading}
+      >
+        Sign Up
+      </Button>
    </VStack>
   )
 }
