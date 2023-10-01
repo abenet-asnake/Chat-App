@@ -6,20 +6,20 @@ const jwt= require('jsonwebtoken');
 const loginModel = require('../models/loginModel');
 
 const login = asyncHandler(async (req, res) =>{
-   // deconstruct the
-   const {user_Name,password}=req.body;
-   if(!user_Name||!password){
+   // deconstruct the 
+   const {email , password}=req.body;
+   if(!email || !password){
     res.status(400);
     throw new Error('Fill the required');
    }
- const isUser=await loginModel.findOne({user_Name});
+ const isUser=await loginModel.findOne({email});
 
-if(isUser && (await bcrypt.compare(password, isUser.password))){
+if(isUser && (await bcrypt.compare(password, isUser.password))) {
     // user  Authentication is need when a user wants to login it gives json  web token
      accessToken= jwt.sign(
         {
         thisUser:{
-            user_Name:loginModel.user_Name,
+            email:loginModel.email,
            
             id:loginModel.id,
 
