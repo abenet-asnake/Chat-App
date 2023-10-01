@@ -30,7 +30,6 @@ password:{
 
 picture:{
     type: String,
-    required: [true,'Please insert your picture'] ,
     default: 'https://cdn.pixabay.com/photo/2016/03/31/17/33/avatar-1293744_1280.png',
 }
 
