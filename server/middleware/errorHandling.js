@@ -1,5 +1,5 @@
 // using the constant.js
-const { constants } = require('./constant');
+const { constants } = require('./constantStatus');
 // we are passing four parameters for middleware 
 const errorHandler = (error,req,res,next) => {
 // we have define the status code 
